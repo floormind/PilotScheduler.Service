@@ -9,8 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\Classes" />
-    <Folder Include="Helpers\Interfaces" />
     <Folder Include="Models\Interfaces" />
   </ItemGroup>
 

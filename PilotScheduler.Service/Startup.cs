@@ -26,7 +26,7 @@ namespace PilotScheduler.Service
             services.Configure<DataConfiguration>(Configuration.GetSection("Data"));
 
             services.AddScoped<IDataConfiguration>(sp => sp.GetRequiredService<IOptions<DataConfiguration>>().Value);
-            services.AddScoped<IDummyDatabaseRepository, DummyDatabaseRepository>();
+            services.AddScoped<IDatabaseRepository, DatabaseRepository>();
             services.AddScoped<IFlyableFromLocation, FlyableFromLocation>();
             services.AddScoped<IFlyableOnDay, FlyableOnDay>();
             services.AddScoped<IPilotAvailabilityChecker, PilotAvailabilityChecker>();

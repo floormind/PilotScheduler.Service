@@ -4,7 +4,7 @@ using PilotScheduler.Service.Models.Classes;
 
 namespace PilotScheduler.Repository.Interfaces
 {
-    public interface IDummyDatabaseRepository
+    public interface IDatabaseRepository
     {
         public DummyPilotRequestRecord RequestPilot(string location, DateTime departureDate, DateTime returnDate);
 

@@ -9,10 +9,10 @@ namespace PilotScheduler.Service.Controllers
     [Route("[controller]")]
     public class ScheduleController : ControllerBase
     {
-        private readonly IDummyDatabaseRepository _dummyDatabaseRepository;
-        public ScheduleController(IDummyDatabaseRepository dummyDatabaseRepository)
+        private readonly IDatabaseRepository _databaseRepository;
+        public ScheduleController(IDatabaseRepository databaseRepository)
         {
-            _dummyDatabaseRepository = dummyDatabaseRepository;
+            _databaseRepository = databaseRepository;
         }
 
         [HttpGet("request-pilot/{location}/{depDateTime}/{returnDateTime}")]
@@ -30,7 +30,7 @@ namespace PilotScheduler.Service.Controllers
                    || !DateTime.TryParse(returnDateTime, out parsedReturnDateTime))
                     return BadRequest("Invalid date provided");
 
-                var pilot = _dummyDatabaseRepository.RequestPilot(location, parsedDepartureDateTime, parsedReturnDateTime);
+                var pilot = _databaseRepository.RequestPilot(location, parsedDepartureDateTime, parsedReturnDateTime);
                 
                 return Ok(pilot);
             }
@@ -45,7 +45,7 @@ namespace PilotScheduler.Service.Controllers
         {
             try
             {
-                var scheduledPilot = _dummyDatabaseRepository.ScheduleFlight(scheduleRequestModel.PilotId,
+                var scheduledPilot = _databaseRepository.ScheduleFlight(scheduleRequestModel.PilotId,
                     scheduleRequestModel.DepDateTime, scheduleRequestModel.ReturnDateTime);
 
                 if (null == scheduledPilot)

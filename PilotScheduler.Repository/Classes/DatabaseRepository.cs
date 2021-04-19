@@ -9,12 +9,12 @@ using PilotScheduler.Service.Models.Interfaces;
 
 namespace PilotScheduler.Repository.Classes
 {
-    public class DummyDatabaseRepository : IDummyDatabaseRepository
+    public class DatabaseRepository : IDatabaseRepository
     {
         private readonly IDataConfiguration _pilotData;
         private readonly IPilotAvailabilityChecker _pilotAvailabilityChecker;
         
-        public DummyDatabaseRepository(IDataConfiguration pilotData, IPilotAvailabilityChecker pilotAvailabilityChecker)
+        public DatabaseRepository(IDataConfiguration pilotData, IPilotAvailabilityChecker pilotAvailabilityChecker)
         {
             _pilotData = pilotData;
             _pilotAvailabilityChecker = pilotAvailabilityChecker;

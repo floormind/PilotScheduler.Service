@@ -14,13 +14,13 @@ namespace PilotScheduler.Tests
     {
         private ScheduleController _scheduleController;
         private Mock<IDataConfiguration> _crewConfigurationMock;
-        private Mock<IDummyDatabaseRepository> _dummyDatabaseRepository;
+        private Mock<IDatabaseRepository> _dummyDatabaseRepository;
 
         [SetUp]
         public void Setup()
         {
             _crewConfigurationMock = new Mock<IDataConfiguration>();
-            _dummyDatabaseRepository = new Mock<IDummyDatabaseRepository>();
+            _dummyDatabaseRepository = new Mock<IDatabaseRepository>();
             
             _scheduleController = new ScheduleController(_dummyDatabaseRepository.Object);
         }

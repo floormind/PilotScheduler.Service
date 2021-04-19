@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\Classes" />
+    <Folder Include="Helpers\Interfaces" />
+    <Folder Include="Models\Interfaces" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PilotScheduler.Repository\PilotScheduler.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

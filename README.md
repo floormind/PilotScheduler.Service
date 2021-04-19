@@ -25,3 +25,22 @@ There are two endpoints on the API and they are
 5. I have added a few interfaces to simulate the various rules that apply to requestion a pilot, 
     1. IFlyableFromLocation => A rule that checks for the location a pilot is able to fly from. 
     1. IFlyableOnDay => A rule that checks for the day of the week a pilot is able to fly on.
+
+## Extra
+1. I have also added a docker file which can be used to run this project. 
+    1. First build a docker image by navigating to the base path of the project and running
+        1. ```docker build -t pilot-scheduler .```
+    1. Run the image as a container by executing the below 
+        1. ```docker run -d -p 5000:5000 pilot-scheduler```
+
+## Sample Request
+1. To call the request pilot endpoint, run the following in postman or any other tool you prefere 
+    1. ```https://localhost:5001/Schedule/request-pilot/Munich/2021-05-01T09%3A00%3A00Z/2021-05-01T11%3A00%3A00Z``` 
+    1. The result should be similar to the below json document. 
+    1. ``` json
+        {
+            "id": "419d8f08-69b4-49e3-9e4e-07261c2a7a63",
+            "pilotId": 1,
+            "requestCount": 1
+        }
+        ```

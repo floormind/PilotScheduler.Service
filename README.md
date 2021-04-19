@@ -7,10 +7,10 @@ This is an API based project to provide availability or pilots based on flight s
 There are two endpoints on the API and they are
 
 1. RequestPilot
-    11. An endpoint that fetches a pilot that is currently available based on the location, departure date and return date.
+    1. An endpoint that fetches a pilot that is currently available based on the location, departure date and return date.
 
 2. ScheduleFlight
-    11. An endpoint that will schedule/reserve a pilot based on the provided departure date and return date for a given pilot.
+    1. An endpoint that will schedule/reserve a pilot based on the provided departure date and return date for a given pilot.
 
 ## Assumptions Taken
 
@@ -23,5 +23,5 @@ There are two endpoints on the API and they are
 4. In regards to the repository, I have added an implementation called DummyDatabseRepository, this is just to stress the fact that that this isnt a real database, but once a real one has been implements, the new repository for that database can just implement the interface IDatabaseRepository. 
 
 5. I have added a few interfaces to simulate the various rules that apply to requestion a pilot, 
-    11. IFlyableFromLocation => A rule that checks for the location a pilot is able to fly from. 
-    11. IFlyableOnDay => A rule that checks for the day of the week a pilot is able to fly on.
+    1. IFlyableFromLocation => A rule that checks for the location a pilot is able to fly from. 
+    1. IFlyableOnDay => A rule that checks for the day of the week a pilot is able to fly on.
